@@ -2,17 +2,16 @@ package org.jab.microservices;
 
 import java.time.Duration;
 import java.util.Optional;
-
-import org.slf4j.LoggerFactory;
-import reactor.netty.http.server.HttpServer;
-
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.server.reactive.HttpHandler;
 import org.springframework.http.server.reactive.ReactorHttpHandlerAdapter;
 import org.springframework.web.reactive.function.server.HandlerStrategies;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.netty.http.server.HttpServer;
 
+@Slf4j
 public class App {
 
 	public static void main(String[] args) throws Exception {
@@ -27,8 +26,7 @@ public class App {
 				.handle(new ReactorHttpHandlerAdapter(httpHandler));
 		httpServer.bindUntilJavaShutdown(Duration.ofSeconds(3), disposableServer -> {
 			long elapsed = System.currentTimeMillis() - begin;
-			LoggerFactory.getLogger(App.class).info("Started in {} seconds",
-					elapsed / 1000.0);
+			LOGGER.info("Started in {} seconds", elapsed / 1000.0);
 		});
 	}
 

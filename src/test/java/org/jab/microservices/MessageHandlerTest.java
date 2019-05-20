@@ -1,11 +1,8 @@
 package org.jab.microservices;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import org.jab.microservices.Message;
-import org.jab.microservices.MessageHandler;
 import org.junit.Before;
 import org.junit.Test;
-
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import static org.hamcrest.Matchers.is;

@@ -1,14 +1,12 @@
 package org.jab.microservices;
 
+import am.ik.yavi.core.ConstraintViolations;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-import am.ik.yavi.core.ConstraintViolations;
-import reactor.core.publisher.Mono;
-
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Mono;
 
 import static java.util.Collections.singletonMap;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;

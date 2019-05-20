@@ -2,7 +2,6 @@ package org.jab.microservices;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 public class HelloHandlerTest {
